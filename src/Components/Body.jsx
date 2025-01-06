@@ -3,9 +3,8 @@ import { BrowserRouter, Routes, Route ,Link } from "react-router-dom"
 import Products from "../Products/Products"
 export default function Body(props){
 
-    // console.log(props.Products)
+    const firstWord = "LET'S" 
 
-    const firstWord = "LET'S"
     return(
         <> 
         <div className="all">

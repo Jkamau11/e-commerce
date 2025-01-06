@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import numeral from 'numeral'
+import { useState } from 'react';
 export default function Products(props){
 
-    console.log(props)
+    const [cart] = useState([])
+
+    // console.log(props)
 
     const Products = props.fetchedProducts;
 
@@ -11,9 +14,11 @@ export default function Products(props){
     const allProducts = Products.map((product, index)=>{
         const price = (product.price * usdToKes).toFixed(4)
         const formattedNumber = numeral(price).format('0,0.00');
-
+        
+        // function to pick and print data of the product when a button is clicked
         function addToCart(){
-            console.log(product)
+            cart.push(product)
+            console.log(cart)
         }
         return(
                 <div key={index} className="mapped-details">

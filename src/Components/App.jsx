@@ -6,6 +6,8 @@ import Header from './Header'
 
 function App() {
 
+  const[body, setBody] = useState(true)
+
   const [products, setProducts] = useState([]);
 
   useEffect(()=>{
@@ -21,8 +23,11 @@ function App() {
   return (
     <>
       <div className='application'>
-        <Header />
-        <Body Products={products} />
+        <Header setBody={setBody} />
+        {
+          body ? <Body Products={products} /> : "cart"
+        }
+        
       </div>
       <div className="app-footer">
         <Footer />

@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 
-export default function Header(){
+export default function Header({setBody}){
 
     return(
         <header>
@@ -7,7 +8,8 @@ export default function Header(){
                 <div className="image">
                 <img src="./images/fashion1.jpg" alt="" />
                 </div>
-                <h3>Fashion</h3>
+                {/* setting the state variable called body to true when a user click on h3(Fashion) */}
+                <h3 onClick={()=>setBody(true)}>Fashion</h3>
             </div>
 
             <div className="navigation">
@@ -24,8 +26,10 @@ export default function Header(){
             {/* cart section */}
 
             <div className="actual-cart">
-                <div className="cart-icon">
-                    <h4>🛒</h4>
+                {/* setting the state variable called body to false when a user click on shopping-cart */}
+                <div className="cart-icon" onClick={()=>setBody(false)}>
+                    {/* <h4>🛒</h4> */}
+                    <i className="fa-solid fa-cart-shopping"></i>
                 </div>
 
                 <div className="cart-quantity">
